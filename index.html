@@ -1,272 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayoré Craft | Luxury Handmade Collection</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYORÉ CRAFT | Luxury Handmade Fashion</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<style>
-html { scroll-behavior: smooth; }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f6efe7;
+      color: #5b3a29;
+      line-height: 1.8;
+      scroll-behavior: smooth;
+    }
 
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  color: #5b3a29;
-  line-height: 1.8;
-  background: url('images/brandlogo.jpeg') center/cover no-repeat fixed;
-}
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+    }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 1px;
-  margin: 0;
-}
+    a { text-decoration: none; color: inherit; }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(6px);
-}
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(10px);
+      font-weight: 500;
+    }
 
-.navbar a {
-  margin-left: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  color: #5b3a29;
-}
+    .navbar a {
+      position: relative;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
 
-.navbar a:hover { color:#c6a75e; }
+    .navbar a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #c6a75e;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
 
-/* Hero */
-.hero {
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.2);
-}
+    .navbar a:hover::after {
+      width: 100%;
+    }
 
-.btn {
-  padding: 22px 60px;
-  background: #c6a75e;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  transition: all 0.4s ease;
-}
+    /* HERO */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-.btn:hover {
-  background: #fff;
-  color: #c6a75e;
-  transform: scale(1.1);
-}
+    .hero-logo {
+      width: 320px;
+      max-width: 80%;
+      margin-bottom: 40px;
+      animation: fadeUp 1.2s ease forwards;
+    }
 
-/* Sections */
-section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: 60px auto;
-  background: rgba(255,255,255,0.9);
-  border-radius: 15px;
-}
+    .btn {
+      padding: 22px 60px;
+      border: none;
+      background: #c6a75e;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: all 0.4s ease;
+      display: inline-block;
+      animation: fadeUp 1.4s ease forwards;
+    }
 
-section h2 {
-  text-align:center;
-  font-size:2.2rem;
-  margin-bottom:30px;
-}
+    .btn:hover {
+      background: #5b3a29;
+      transform: translateY(-3px);
+    }
 
-/* Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
+    /* ANIMATION */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.product-card {
-  background:#fff;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transition:0.4s ease;
-  text-align:center;
-  padding-bottom:20px;
-}
+    /* SECTIONS */
+    section {
+      padding: 100px 30px;
+      max-width: 1000px;
+      margin: 60px auto;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    }
 
-.product-card:hover {
-  transform:translateY(-10px);
-  box-shadow:0 15px 35px rgba(0,0,0,0.15);
-}
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+    }
 
-.product-card img {
-  width:100%;
-  height:350px;
-  object-fit:cover;
-}
+    .gold-line {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, #c6a75e, #e6c98f, #c6a75e);
+      margin: 20px auto 40px auto;
+      border-radius: 5px;
+    }
 
-.order-btn {
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 25px;
-  background:#c6a75e;
-  color:white;
-  border-radius:8px;
-  font-weight:600;
-  font-size:0.9rem;
-  transition:0.3s;
-}
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
 
-.order-btn:hover {
-  background:#5b3a29;
-}
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
 
-/* Contact */
-.contact p { text-align:center; }
+    .product-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      transition: 0.6s ease;
+    }
 
-/* Footer */
-footer {
-  background: rgba(47,42,38,0.95);
-  color: #d6cfc8;
-  padding: 60px 20px;
-  text-align: center;
-  font-size: 0.9rem;
-}
+    .product-card:hover img {
+      transform: scale(1.08);
+    }
 
-/* Floating WhatsApp */
-.whatsapp {
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  width:65px;
-  height:65px;
-  background:#25D366;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
-  z-index:1000;
-  transition:0.3s;
-}
+    .order-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.95);
+      color: #5b3a29;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      opacity: 0;
+      transition: 0.4s ease;
+    }
 
-.whatsapp img { width:35px; }
+    .product-card:hover .order-btn {
+      opacity: 1;
+    }
 
-.whatsapp:hover { transform:scale(1.1); }
+    /* CONTACT */
+    .contact p {
+      text-align: center;
+      font-size: 1rem;
+    }
 
-@media (max-width:768px){
-  .btn { padding:18px 40px; font-size:1rem; }
-}
-</style>
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 0.9rem;
+      color: #8a7f75;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 55px;
+      height: 55px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: 0.3s ease;
+    }
+
+    .whatsapp-float img {
+      width: 28px;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+  </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <div>
-    <img src="images/brandlogo.jpeg" style="height:50px;">
-  </div>
-  <div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
     <a href="#">Home</a>
     <a href="#about">About</a>
     <a href="#collection">Collection</a>
     <a href="#contact">Contact</a>
-  </div>
-</nav>
+  </nav>
 
-<!-- Hero -->
-<header class="hero">
-  <a href="#collection" class="btn">SHOP THE COLLECTION</a>
-</header>
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <img src="images/brandlogo.jpeg" alt="AYORÉ CRAFT Logo" class="hero-logo">
+      <br>
+      <a href="https://wa.me/2349061611638?text=Hello%20AYORÉ%20CRAFT,%20I%20am%20interested%20in%20your%20collection"
+         class="btn"
+         target="_blank">
+         SHOP THE COLLECTION
+      </a>
+    </div>
+  </header>
 
-<!-- About -->
-<section id="about">
-  <h2>About AYORÉ CRAFT</h2>
-  <p>AYORÉ CRAFT was born from a love for timeless elegance and intentional gifting. We believe every piece you carry should tell a story — of style, confidence, and quality.</p>
-  <p>From carefully crafted designs to thoughtful finishing touches, our brand is built on excellence, beauty, and attention to detail.</p>
-  <p><strong>We don’t just create products. We create experiences.</strong></p>
-</section>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About AYORÉ CRAFT</h2>
+    <div class="gold-line"></div>
+    <p>AYORÉ CRAFT was born from a love for timeless elegance and intentional gifting. We believe every piece you carry should tell a story — of style, confidence, and quality.</p>
+    <p>From carefully crafted designs to thoughtful finishing touches, our brand is built on excellence, beauty, and attention to detail. Whether you’re gifting someone special or treating yourself, AYORÉ CRAFT creates pieces that feel personal and unforgettable.</p>
+    <p><strong>We don’t just create products. We create experiences.</strong></p>
+  </section>
 
-<!-- Collection -->
-<section id="collection">
-<h2>Our Handmade Collection</h2>
+  <!-- COLLECTION -->
+  <section id="collection">
+    <h2>Our Collection</h2>
+    <div class="gold-line"></div>
 
-<h3>Bags</h3>
-<div id="bags" class="gallery"></div>
+    <h3>Bags</h3>
+    <div id="bags" class="gallery"></div>
 
-<h3>Slides</h3>
-<div id="slides" class="gallery"></div>
+    <h3>Slides</h3>
+    <div id="slides" class="gallery"></div>
 
-<h3>Shoes</h3>
-<div id="shoes" class="gallery"></div>
+    <h3>Shoes</h3>
+    <div id="shoes" class="gallery"></div>
+  </section>
 
-</section>
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="gold-line"></div>
+    <p>
+      📍 Ipaja, Lagos<br><br>
+      📱 <a href="https://wa.me/2349061611638">0906 161 1638</a><br>
+      📧 ayorecraft@gmail.com
+    </p>
+  </section>
 
-<!-- Contact -->
-<section id="contact" class="contact">
-<h2>Contact Us</h2>
-<p>
-📍 Ipaja, Lagos<br><br>
-📱 <a href="https://wa.me/2349061611638">0906 161 1638</a><br>
-📧 ayorecraft@gmail.com<br>
-📸 Instagram: @Ayore_craft<br>
-🎵 TikTok: @Ayore_craft
-</p>
-</section>
+  <footer>
+    © 2026 AYORÉ CRAFT. All Rights Reserved.
+  </footer>
 
-<footer>
-© 2026 Ayoré Craft. All Rights Reserved.
-</footer>
+  <!-- WhatsApp Floating Icon -->
+  <a href="https://wa.me/2349061611638" class="whatsapp-float" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/2349061611638?text=Hello%20AYORÉ%20CRAFT,%20I%20would%20like%20to%20make%20an%20order." 
-   class="whatsapp" target="_blank">
-   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
+  <!-- Dynamic Gallery Script -->
+  <script>
+    function loadGallery(category, containerId, count) {
+      const container = document.getElementById(containerId);
 
-<!-- JavaScript -->
-<script>
-function loadGallery(category, containerId, count) {
-  const container = document.getElementById(containerId);
+      for (let i = 1; i <= count; i++) {
+        const card = document.createElement("div");
+        card.className = "product-card";
 
-  for (let i = 1; i <= count; i++) {
+        const img = document.createElement("img");
+        img.src = `images/${category}${i}.jpeg`;
 
-    const card = document.createElement("div");
-    card.className = "product-card";
+        const orderBtn = document.createElement("a");
+        orderBtn.className = "order-btn";
+        orderBtn.innerText = "Order Now";
 
-    const img = document.createElement("img");
-    img.src = `images/${category}${i}.jpeg`;
+        const productName = `${category} ${i}`;
+        orderBtn.href = `https://wa.me/2349061611638?text=${encodeURIComponent("Hello AYORÉ CRAFT, I would like to order " + productName)}`;
+        orderBtn.target = "_blank";
 
-    const orderBtn = document.createElement("a");
-    orderBtn.className = "order-btn";
-    orderBtn.innerText = "Order Now";
+        card.appendChild(img);
+        card.appendChild(orderBtn);
+        container.appendChild(card);
+      }
+    }
 
-    const productRef = category + " " + i;
-    orderBtn.href = `https://wa.me/2349061611638?text=${encodeURIComponent("Hello AYORÉ CRAFT, I would like to order " + productRef)}`;
-    orderBtn.target = "_blank";
-
-    card.appendChild(img);
-    card.appendChild(orderBtn);
-    container.appendChild(card);
-  }
-}
-
-loadGallery("bag", "bags", 9);
-loadGallery("slide", "slides", 18);
-loadGallery("shoe", "shoes", 3);
-</script>
+    loadGallery("bag", "bags", 9);
+    loadGallery("slide", "slides", 18);
+    loadGallery("shoe", "shoes", 3);
+  </script>
 
 </body>
 </html>
