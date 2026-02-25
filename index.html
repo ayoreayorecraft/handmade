@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayoré Craft | Luxury Handmade Collection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #5b3a29;
+  line-height: 1.8;
+  background: url('images/brandlogo.jpeg') center/cover no-repeat fixed;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+}
+
+.navbar a {
+  margin-left: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #5b3a29;
+}
+
+.navbar a:hover { color:#c6a75e; }
+
+/* Hero */
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.2);
+}
+
+.btn {
+  padding: 22px 60px;
+  background: #c6a75e;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #c6a75e;
+  transform: scale(1.1);
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 60px auto;
+  background: rgba(255,255,255,0.9);
+  border-radius: 15px;
+}
+
+section h2 {
+  text-align:center;
+  font-size:2.2rem;
+  margin-bottom:30px;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.product-card {
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.4s ease;
+  text-align:center;
+  padding-bottom:20px;
+}
+
+.product-card:hover {
+  transform:translateY(-10px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width:100%;
+  height:350px;
+  object-fit:cover;
+}
+
+.order-btn {
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 25px;
+  background:#c6a75e;
+  color:white;
+  border-radius:8px;
+  font-weight:600;
+  font-size:0.9rem;
+  transition:0.3s;
+}
+
+.order-btn:hover {
+  background:#5b3a29;
+}
+
+/* Contact */
+.contact p { text-align:center; }
+
+/* Footer */
+footer {
+  background: rgba(47,42,38,0.95);
+  color: #d6cfc8;
+  padding: 60px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Floating WhatsApp */
+.whatsapp {
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:65px;
+  height:65px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  z-index:1000;
+  transition:0.3s;
+}
+
+.whatsapp img { width:35px; }
+
+.whatsapp:hover { transform:scale(1.1); }
+
+@media (max-width:768px){
+  .btn { padding:18px 40px; font-size:1rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div>
+    <img src="images/brandlogo.jpeg" style="height:50px;">
+  </div>
+  <div>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#collection">Collection</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <a href="#collection" class="btn">SHOP THE COLLECTION</a>
+</header>
+
+<!-- About -->
+<section id="about">
+  <h2>About AYORÉ CRAFT</h2>
+  <p>AYORÉ CRAFT was born from a love for timeless elegance and intentional gifting. We believe every piece you carry should tell a story — of style, confidence, and quality.</p>
+  <p>From carefully crafted designs to thoughtful finishing touches, our brand is built on excellence, beauty, and attention to detail.</p>
+  <p><strong>We don’t just create products. We create experiences.</strong></p>
+</section>
+
+<!-- Collection -->
+<section id="collection">
+<h2>Our Handmade Collection</h2>
+
+<h3>Bags</h3>
+<div id="bags" class="gallery"></div>
+
+<h3>Slides</h3>
+<div id="slides" class="gallery"></div>
+
+<h3>Shoes</h3>
+<div id="shoes" class="gallery"></div>
+
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
+<p>
+📍 Ipaja, Lagos<br><br>
+📱 <a href="https://wa.me/2349061611638">0906 161 1638</a><br>
+📧 ayorecraft@gmail.com<br>
+📸 Instagram: @Ayore_craft<br>
+🎵 TikTok: @Ayore_craft
+</p>
+</section>
+
+<footer>
+© 2026 Ayoré Craft. All Rights Reserved.
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/2349061611638?text=Hello%20AYORÉ%20CRAFT,%20I%20would%20like%20to%20make%20an%20order." 
+   class="whatsapp" target="_blank">
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
+<!-- JavaScript -->
+<script>
+function loadGallery(category, containerId, count) {
+  const container = document.getElementById(containerId);
+
+  for (let i = 1; i <= count; i++) {
+
+    const card = document.createElement("div");
+    card.className = "product-card";
+
+    const img = document.createElement("img");
+    img.src = `images/${category}${i}.jpeg`;
+
+    const orderBtn = document.createElement("a");
+    orderBtn.className = "order-btn";
+    orderBtn.innerText = "Order Now";
+
+    const productRef = category + " " + i;
+    orderBtn.href = `https://wa.me/2349061611638?text=${encodeURIComponent("Hello AYORÉ CRAFT, I would like to order " + productRef)}`;
+    orderBtn.target = "_blank";
+
+    card.appendChild(img);
+    card.appendChild(orderBtn);
+    container.appendChild(card);
+  }
+}
+
+loadGallery("bag", "bags", 9);
+loadGallery("slide", "slides", 18);
+loadGallery("shoe", "shoes", 3);
+</script>
+
+</body>
+</html>
