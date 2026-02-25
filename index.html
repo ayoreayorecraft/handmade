@@ -175,6 +175,7 @@
     .contact p {
       text-align: center;
       font-size: 1rem;
+      line-height: 1.8;
     }
 
     /* FOOTER */
@@ -210,6 +211,31 @@
       transform: scale(1.1);
     }
 
+    /* SOCIAL FLOAT */
+    .social-float {
+      position: fixed;
+      bottom: 25px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: 0.3s ease;
+    }
+
+    .social-float img {
+      width: 28px;
+    }
+
+    .social-float:hover {
+      transform: scale(1.1);
+    }
+
+    .social-float.instagram { right: 90px; background: #E1306C; }
+    .social-float.tiktok { right: 155px; background: #000000; }
   </style>
 </head>
 
@@ -266,8 +292,10 @@
     <div class="gold-line"></div>
     <p>
       📍 Ipaja, Lagos<br><br>
-      📱 <a href="https://wa.me/2349061611638">0906 161 1638</a><br>
-      📧 ayorecraft@gmail.com
+      📱 <a href="https://wa.me/2349061611638" target="_blank">0906 161 1638</a><br>
+      📧 <a href="mailto:ayorecraft@gmail.com">ayorecraft@gmail.com</a><br>
+      📷 <a href="https://instagram.com/yourusername" target="_blank">Instagram</a><br>
+      🎵 <a href="https://www.tiktok.com/@yourusername" target="_blank">TikTok</a>
     </p>
   </section>
 
@@ -275,9 +303,17 @@
     © 2026 AYORÉ CRAFT. All Rights Reserved.
   </footer>
 
-  <!-- WhatsApp Floating Icon -->
+  <!-- Floating Icons -->
   <a href="https://wa.me/2349061611638" class="whatsapp-float" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+
+  <a href="https://instagram.com/yourusername" class="social-float instagram" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+  </a>
+
+  <a href="https://www.tiktok.com/@yourusername" class="social-float tiktok" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
   </a>
 
   <!-- Dynamic Gallery Script -->
