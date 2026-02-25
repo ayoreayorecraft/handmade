@@ -127,8 +127,8 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
     }
 
     .product-card {
@@ -139,7 +139,8 @@
 
     .product-card img {
       width: 100%;
-      height: 350px;
+      height: auto;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       transition: 0.6s ease;
     }
@@ -181,33 +182,47 @@
       color: #8a7f75;
     }
 
-    /* Floating Icons */
+    /* Floating Icons - Reverted to Default Colors */
     .whatsapp-float, .social-float {
       position: fixed;
       bottom: 25px;
-      width: 60px;
-      height: 60px;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       z-index: 1000;
-      transition: all 0.3s ease;
-    }
-
-    .whatsapp-float img, .social-float img {
-      width: 30px;
-      filter: invert(1); /* white icons for contrast */
+      transition: 0.3s ease;
     }
 
     .whatsapp-float { right: 25px; background: #25D366; }
-    .social-float.instagram { right: 95px; background: #c6a75e; }
-    .social-float.tiktok { right: 165px; background: #5b3a29; }
+    .social-float.instagram { right: 95px; background: #E1306C; }
+    .social-float.tiktok { right: 165px; background: #000000; }
+
+    .whatsapp-float img, .social-float img {
+      width: 28px;
+      filter: none;
+    }
 
     .whatsapp-float:hover, .social-float:hover {
-      transform: scale(1.15);
+      transform: scale(1.1);
       box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive Gallery */
+    @media (max-width: 768px) {
+      .gallery { gap: 15px; }
+      .btn { padding: 18px 45px; font-size: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery { gap: 10px; }
+      .hero-logo { width: 80%; }
+      .btn { padding: 15px 35px; font-size: 0.95rem; }
+      .whatsapp-float, .social-float { width: 50px; height: 50px; }
+      .whatsapp-float img, .social-float img { width: 25px; }
     }
   </style>
 </head>
@@ -281,7 +296,7 @@
   </a>
 
   <a href="https://instagram.com/Ayore_craft" class="social-float instagram" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
   </a>
 
   <a href="https://www.tiktok.com/@Ayore_craft" class="social-float tiktok" target="_blank">
@@ -305,7 +320,7 @@
         orderBtn.innerText = "Order Now";
 
         const productName = `${category} ${i}`;
-        const waMessage = `🛍️ Hello AYORÉ CRAFT! I want to order ${productName}. Here is the product: ${window.location.origin}/images/${category}${i}.jpeg`;
+        const waMessage = `Hello AYORÉ CRAFT, I would like to order ${productName}.`;
         orderBtn.href = `https://wa.me/2349061611638?text=${encodeURIComponent(waMessage)}`;
         orderBtn.target = "_blank";
 
