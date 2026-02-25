@@ -98,13 +98,11 @@
       transform: translateY(-3px);
     }
 
-    /* ANIMATION */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* SECTIONS */
     section {
       padding: 100px 30px;
       max-width: 1000px;
@@ -127,7 +125,6 @@
       border-radius: 5px;
     }
 
-    /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -171,14 +168,12 @@
       opacity: 1;
     }
 
-    /* CONTACT */
     .contact p {
       text-align: center;
       font-size: 1rem;
       line-height: 1.8;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px;
@@ -186,56 +181,34 @@
       color: #8a7f75;
     }
 
-    /* WHATSAPP FLOAT */
-    .whatsapp-float {
+    /* Floating Icons */
+    .whatsapp-float, .social-float {
       position: fixed;
       bottom: 25px;
-      right: 25px;
-      width: 55px;
-      height: 55px;
-      background: #25D366;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       z-index: 1000;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
     }
 
-    .whatsapp-float img {
-      width: 28px;
+    .whatsapp-float img, .social-float img {
+      width: 30px;
+      filter: invert(1); /* white icons for contrast */
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
+    .whatsapp-float { right: 25px; background: #25D366; }
+    .social-float.instagram { right: 95px; background: #c6a75e; }
+    .social-float.tiktok { right: 165px; background: #5b3a29; }
 
-    /* SOCIAL FLOAT */
-    .social-float {
-      position: fixed;
-      bottom: 25px;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      z-index: 1000;
-      transition: 0.3s ease;
+    .whatsapp-float:hover, .social-float:hover {
+      transform: scale(1.15);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
     }
-
-    .social-float img {
-      width: 28px;
-    }
-
-    .social-float:hover {
-      transform: scale(1.1);
-    }
-
-    .social-float.instagram { right: 90px; background: #E1306C; }
-    .social-float.tiktok { right: 155px; background: #000000; }
   </style>
 </head>
 
@@ -255,8 +228,7 @@
       <img src="images/brandlogo.jpeg" alt="AYORÉ CRAFT Logo" class="hero-logo">
       <br>
       <a href="https://wa.me/2349061611638?text=Hello%20AYORÉ%20CRAFT,%20I%20am%20interested%20in%20your%20collection"
-         class="btn"
-         target="_blank">
+         class="btn" target="_blank">
          SHOP THE COLLECTION
       </a>
     </div>
@@ -309,7 +281,7 @@
   </a>
 
   <a href="https://instagram.com/Ayore_craft" class="social-float instagram" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
   </a>
 
   <a href="https://www.tiktok.com/@Ayore_craft" class="social-float tiktok" target="_blank">
@@ -333,7 +305,7 @@
         orderBtn.innerText = "Order Now";
 
         const productName = `${category} ${i}`;
-        const waMessage = `Hello AYORÉ CRAFT, I would like to order ${productName}. 📸 Here is the picture: ${window.location.origin}/images/${category}${i}.jpeg`;
+        const waMessage = `🛍️ Hello AYORÉ CRAFT! I want to order ${productName}. Here is the product: ${window.location.origin}/images/${category}${i}.jpeg`;
         orderBtn.href = `https://wa.me/2349061611638?text=${encodeURIComponent(waMessage)}`;
         orderBtn.target = "_blank";
 
